@@ -10,11 +10,12 @@ import config
 client = commands.Bot(command_prefix = config.prefix)
 client.remove_command('help')
 
-user = "684418873042141191"
+user = 684418873042141191
 
 @client.event
-async def on_ready():
+async def on_ready(ctx):
 	print(' $ Bot in system')
+	await ctx.send("```[log] system : OK```")
 
 @client.event
 async def on_command_error(ctx, error):
@@ -29,9 +30,6 @@ async def vio(ctx):
 @client.command(pass_context = True)
 async def puts(ctx, message:discord.Message):
 	ctx.messga(message.author.id)
-	if ctx.message.author.id == NDU3MjUwNjQ2ODAyODI1MjE4.XxnOFg.4xGHhA9q7Sl8copclGFhYoa_RLk:
-		await ctx.message.author.voice.channel.connect(reconnect=True)
-	
 	
 @client.command(pass_context=True)
 async def get_help(ctx):
