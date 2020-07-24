@@ -33,6 +33,7 @@ async def vio(ctx):
 	
 @client.command(pass_context = True)
 async def log(ctx):
+	await ctx.channel.send(message.author)
 	if message.author == 457250646802825218:
 		await ctx.channel.send(f"```[log] system : OK\n[log] version:{ver_data}\n[log] live: {live_data}```")
 	
