@@ -9,7 +9,7 @@ import datetime
 import config
 
 publication_data = datetime.datetime(2020, 7, 25) # 25/07/2020
-ver_data = datatime.today()
+ver_data = datetime.today()
 
 live_data = ver_data - publication_data
 
