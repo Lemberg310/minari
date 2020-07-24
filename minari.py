@@ -5,12 +5,17 @@ import requests
 from time import sleep
 from random import randint
 
+import datetime
 import config
+
+publication_data = datetime.datetime(2020, 7, 25) # 25/07/2020
+ver_data = datatime.today()
+
+live_data = ver_data - publication_data
 
 client = commands.Bot(command_prefix = config.prefix)
 client.remove_command('help')
 
-user = 684418873042141191
 
 @client.event
 async def on_ready():
@@ -28,7 +33,8 @@ async def vio(ctx):
 	
 @client.command(pass_context = True)
 async def log(ctx):
-	await ctx.channel.send("```[log] system : OK```")
+	await ctx.channel.send(f"```[log] system : OK\n[log] version:{ver_data}\n[log] live: {live_data}```")
+	
 @client.command(pass_context=True)
 async def get_help(ctx):
 	help_d = discord.Embed(title="Command", color=0x00ff00)
