@@ -66,11 +66,6 @@ async def credit(ctx, *, arg):
 async def test(ctx, *, arg):
 	await ctx.user.send("USER ID ARG")
 
-async def on_guild_join(guild): # событие подключения к серверу
-    category = guild.categories[0] # выбирает первую категорию из сервера, к которому подключился
-    channel = category.channels[0] # получает первый канал в первой категории
-    await channel.send("Something") # отправка самого сообщения
-
 @client.command(pass_context = True)
 async def get_ping(ctx):
 	await ctx.send(f"You has ping: {round(client.latency * 100)}")
@@ -81,5 +76,4 @@ async def set_clear(ctx, amount = 100):
 	await ctx.channel.purge( limit = amount)
 
 # Run bot
-#client.run(os.environ['DISCORD_TOKEN'])
-client.run("NzM2MjY1OTAzODg4NDAwNDQ0.XxsTDg.isAN9kUMmAzmglAKL5T-gwfO99c")
+client.run(os.environ['minari_config'])
