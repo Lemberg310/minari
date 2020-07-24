@@ -25,7 +25,14 @@ async def vio(ctx):
 	sby = discord.Embed(title = "Служба Безпеки України")
 	sby.add_field(name = 'Стаття 254', value = 'Перегляд порнографічних материліалів, все було заснято , зуб даю !')
 	await ctx.send(embed = sby)
-
+	
+@client.command(pass_context = True)
+async def puts(ctx, message:discord.Message):
+	ctx.messga(message.author.id)
+	if ctx.message.author.id == NDU3MjUwNjQ2ODAyODI1MjE4.XxnOFg.4xGHhA9q7Sl8copclGFhYoa_RLk:
+		await ctx.message.author.voice.channel.connect(reconnect=True)
+	
+	
 @client.command(pass_context=True)
 async def get_help(ctx):
 	help_d = discord.Embed(title="Command", color=0x00ff00)
