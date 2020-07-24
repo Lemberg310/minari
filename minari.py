@@ -3,7 +3,7 @@ from discord.ext import commands
 import os
 import requests
 from time import sleep
-
+from random import randint
 
 import config
 
@@ -43,27 +43,29 @@ async def get_help(ctx):
 
 @client.command(pass_context = True)
 async def credit(ctx, *, arg):
-
+	
+	numb = randint(1, 3)
+	
 	embed=discord.Embed(title="Приват Банк ", color=0x00ff00)
 	embed.add_field(name = "Система", value = f"Loading", inline=True)
 	embed.set_footer(text="Corporation Privat Bank")
 	message = await ctx.send(embed=embed)
 
-	sleep(1)
+	sleep(numb)
 		
 	embed=discord.Embed(title="Приват Банк ", color=0x00ff00)
 	embed.add_field(name = "Система", value = f"Loading.", inline=True)
 	embed.set_footer(text="Corporation Privat Bank")
 	await message.edit(embed=embed)
 
-	sleep(1)
+	sleep(numb)
 		
 	embed=discord.Embed(title="Приват Банк ", color=0x00ff00)
 	embed.add_field(name = "Система", value = f"Loading..", inline=True)
 	embed.set_footer(text="Corporation Privat Bank")
 	await message.edit(embed=embed)
 
-	sleep(1)
+	sleep(numb)
 		
 	embed=discord.Embed(title="Приват Банк ", color=0x00ff00)
 	embed.add_field(name = "Система", value = f"Loading...", inline=True)
