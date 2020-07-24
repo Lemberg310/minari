@@ -27,10 +27,6 @@ async def vio(ctx):
 	await ctx.send(embed = sby)
 	
 @client.command(pass_context = True)
-async def puts(ctx, message):
-	message.channel.send(message.author.id)
-	
-@client.command(pass_context = True)
 async def log(ctx):
 	await ctx.channel.send("```[log] system : OK```")
 @client.command(pass_context=True)
