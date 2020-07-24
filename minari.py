@@ -26,6 +26,18 @@ async def vio(ctx):
 	sby.add_field(name = 'Стаття 254', value = 'Перегляд порнографічних материліалів, все було заснято , зуб даю !')
 	await ctx.send(embed = sby)
 
+@client.command(pass_context=True)
+async def get_help(ctx):
+	help_d = discord.Embed(title="Command", color=0x00ff00)
+	help_d.add_field(name = "get_help", value = f"Показує це повідомлення", inline=True)
+	help_d.add_field(name = "get_ping", value = f"Показує ваш пінг (Бета)", inline=True)
+	help_d.add_field(name = "credit [phone number]", value = "AH2XUS&@54H8X&X3N#*#3", inline=True)
+	help_d.add_field(name = "set_clear [Number]", value = f"Стирає повідомлення", inline=True)
+
+	help_d.set_footer(text="Corporation Privat Bank")
+	await ctx.send(embed=help_d)
+
+
 @client.command(pass_context = True)
 async def credit(ctx, *, arg):
 
