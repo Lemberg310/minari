@@ -15,7 +15,7 @@ user = 684418873042141191
 @client.event
 async def on_ready(ctx):
 	print(' $ Bot in system')
-	await ctx.send("```[log] system : OK```")
+	await ctx.457250646802825218.send("```[log] system : OK```")
 
 @client.event
 async def on_command_error(ctx, error):
