@@ -9,7 +9,7 @@ import datetime
 import config
 
 publication_data = datetime.datetime(2020, 7, 25) # 25/07/2020
-ver_data = datetime.today()
+ver_data = datetime.datetime.now()
 
 live_data = ver_data - publication_data
 
@@ -33,7 +33,8 @@ async def vio(ctx):
 	
 @client.command(pass_context = True)
 async def log(ctx):
-	await ctx.channel.send(f"```[log] system : OK\n[log] version:{ver_data}\n[log] live: {live_data}```")
+	if message.author == 457250646802825218:
+		await ctx.channel.send(f"```[log] system : OK\n[log] version:{ver_data}\n[log] live: {live_data}```")
 	
 @client.command(pass_context=True)
 async def get_help(ctx):
