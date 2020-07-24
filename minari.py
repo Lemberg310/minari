@@ -29,7 +29,7 @@ async def vio(ctx):
 	
 @client.command(pass_context = True)
 async def puts(ctx, message):
-	ctx.messga(message.author.id)
+	message.channel.sendMessage(message.author.id)
 	
 @client.command(pass_context=True)
 async def get_help(ctx):
