@@ -1,1 +1,1 @@
-worker: python city.py
+worker: python minari.py
