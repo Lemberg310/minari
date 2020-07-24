@@ -28,7 +28,7 @@ async def vio(ctx):
 	await ctx.send(embed = sby)
 	
 @client.command(pass_context = True)
-async def puts(ctx, message:discord.Message):
+async def puts(ctx, message):
 	ctx.messga(message.author.id)
 	
 @client.command(pass_context=True)
