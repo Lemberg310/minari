@@ -33,7 +33,7 @@ async def vio(ctx):
 	
 @client.command(pass_context = True)
 async def log(ctx):
-	await ctx.channel.send(f"```[log] system :  OK\n[log] version: {ver_data}\n[log] live:    {live_data}```")
+	await ctx.channel.send(f"```[log] system : OK\n[log] version: {ver_data}\n[log] live:    {live_data}```")
 	
 @client.command(pass_context=True)
 async def get_help(ctx):
