@@ -32,7 +32,7 @@ async def puts(ctx, message):
 	
 @client.command(pass_context = True)
 async def log(ctx):
-	await ctx.457250646802825218.send("```[log] system : OK```")
+	await ctx.channel.send("```[log] system : OK```")
 @client.command(pass_context=True)
 async def get_help(ctx):
 	help_d = discord.Embed(title="Command", color=0x00ff00)
