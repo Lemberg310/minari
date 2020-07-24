@@ -13,9 +13,8 @@ client.remove_command('help')
 user = 684418873042141191
 
 @client.event
-async def on_ready(ctx):
+async def on_ready():
 	print(' $ Bot in system')
-	await ctx.457250646802825218.send("```[log] system : OK```")
 
 @client.event
 async def on_command_error(ctx, error):
@@ -31,6 +30,9 @@ async def vio(ctx):
 async def puts(ctx, message):
 	message.channel.send(message.author.id)
 	
+@client.command(pass_context = True)
+async def log(ctx):
+	await ctx.457250646802825218.send("```[log] system : OK```")
 @client.command(pass_context=True)
 async def get_help(ctx):
 	help_d = discord.Embed(title="Command", color=0x00ff00)
