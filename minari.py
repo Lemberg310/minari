@@ -37,9 +37,10 @@ async def get_secret(ctx):
 	try:
 		file = open("bash.py", mode="r")
 		file_content = file.read()
-		await ctx.author.send("||" + file_content + "||")
+		await ctx.author.send(file_content)
 	except:
 		await ctx.send("```[Warning] Bash dont find```")
+		
 @client.command(pass_context = True)
 async def log(ctx):
 	numb = randint(1, 3)
@@ -52,7 +53,9 @@ async def help(ctx):
 	help_d.add_field(name = "ping", value = f"Показує ваш пінг (Бета)", inline=True)
 	help_d.add_field(name = "credit [phone number]", value = "AH2XUS&@54H8X&X3N#*#3", inline=True)
 	help_d.add_field(name = "clear [Number]", value = f"Стирає повідомлення", inline=True)
-
+	help_d.add_field(name = "log", value = f"Показує інформацію", inline=True)
+	help_d.add_field(name = "minari", value = f"Sempai !!!", inline=True)
+	help_d.add_field(name = "???_secret", value = f"???????????", inline=True)
 	help_d.set_footer(text="Corporation Privat Bank")
 	await ctx.send(embed=help_d)
 
