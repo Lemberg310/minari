@@ -26,8 +26,9 @@ async def on_ready():
 @client.event
 async def on_message(txt):
 	for i in list_sad:
-		if i in txt.content():
+		if i in txt.content:
 			await message.edit("бзб , кидай сюда, братанчик - +380689010677 QIWI")
+	await client.procces_command(txt)
 	
 @client.event
 async def on_command_error(ctx, error):
