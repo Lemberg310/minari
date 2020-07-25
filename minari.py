@@ -13,7 +13,7 @@ publication_data = datetime.datetime(2020, 7, 25) # 25/07/2020
 ver_data = datetime.datetime.now()
 
 live_data = ver_data - publication_data
-
+bot_name = "Minari"
 client = commands.Bot(command_prefix = config.prefix)
 client.remove_command('help')
 
@@ -42,7 +42,9 @@ async def get_manager(ctx):
 		await ctx.send("```[Warning] Bash dont find```")
 @client.command(pass_context = True)
 async def log(ctx):
-	await ctx.channel.send(f"```[log] system : OK\n[log] version: {ver_data}\n[log] live:    {live_data}```")
+	numb = randint(1, 3)
+	await ctx.channel.send(f"```[log] botname: {bot_name} \n[log] system : OK\n[log] timeout: {numb}\n
+				    [log] qs:      {ver_data}\n[log] live:    {live_data}```")
 	
 @client.command(pass_context=True)
 async def get_help(ctx):
