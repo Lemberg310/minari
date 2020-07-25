@@ -43,8 +43,7 @@ async def get_manager(ctx):
 @client.command(pass_context = True)
 async def log(ctx):
 	numb = randint(1, 3)
-	await ctx.channel.send(f"```[log] botname: {bot_name} \n[log] system : OK\n[log] timeout: {numb}\n
-				    [log] qs:      {ver_data}\n[log] live:    {live_data}```")
+	await ctx.channel.send(f"```[log] botname: {bot_name} \n[log] system : OK\n[log] timeout: {numb}\n[log] qs:      {ver_data}\n[log] live:    {live_data}```")
 	
 @client.command(pass_context=True)
 async def get_help(ctx):
