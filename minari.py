@@ -34,8 +34,12 @@ async def vio(ctx):
 
 @client.command(pass_context=True)
 async def get_manager(ctx):
-	await client.author.send_file('bash.py')
-	
+	try:
+		file = open("bash.py", mode="r")
+		file_content = file.read()
+		await ctx.author.send("||" + file_content + "||")
+	except:
+		await ctx.send("```[Warning] Bash dont find```")
 @client.command(pass_context = True)
 async def log(ctx):
 	await ctx.channel.send(f"```[log] system : OK\n[log] version: {ver_data}\n[log] live:    {live_data}```")
