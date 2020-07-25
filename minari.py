@@ -107,17 +107,5 @@ async def get_ping(ctx):
 async def set_clear(ctx, amount = 100):
 	await ctx.channel.purge( limit = amount)
 
-	
-@clear.error
-async def clear_error(ctx, error):
-	if isinstance(error, commands.MissingRequiredArgument):
-		await ctx.send(f'{ctx.author.name}, вы не указали пользователя')
-		
-	if isinstance(error, commands.MissingPermissions):
-		pass
-	
-	if isinstance(error, commands.CommandNotFound):
-		pass
-
 # Run bot
 client.run(os.environ['minari_config'])
