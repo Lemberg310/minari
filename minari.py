@@ -52,6 +52,7 @@ async def log(ctx):
 async def prefix(ctx, *, new_pas):
 	config.prefix = new_pas
 	await ctx.send(f"```  Prefix Change\nPrefix : {config.prefix}```")
+	import config
 	
 	
 @client.command(pass_context=True)
