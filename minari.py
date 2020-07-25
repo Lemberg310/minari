@@ -46,18 +46,23 @@ async def get_secret(ctx):
 @client.command(pass_context = True)
 async def log(ctx):
 	numb = randint(1, 3)
-	await ctx.channel.send(f"```[log] botname: {bot_name} \n[log] system : OK\n[log] timeout: {numb}\n[log] qs:      {ver_data}\n[log] live:    {live_data}```")
+	await ctx.channel.send(f"```[log] botname: {bot_name} \n[log] system : OK\n[log] timeout: {numb}\n[log] qs:      {ver_data}\n[log] live:    {live_data}\n[log] prefix:  {config.prefix}```")
+
+@client.command(pass_context= True)
+async def prefix(ctx, *, new_pas):
+	config.prefix = new_pas
+	await ctx.send(f"```  Prefix Change\nPrefix : {config.prefix}```")
+	
 	
 @client.command(pass_context=True)
 async def help(ctx):
 	help_d = discord.Embed(title="Command", color=0x00ff00)
 	help_d.add_field(name = "help", value = f"Показує це повідомлення", inline=True)
 	help_d.add_field(name = "ping", value = f"Показує ваш пінг (Бета)", inline=True)
-	help_d.add_field(name = "credit [phone number]", value = "AH2XUS&@54H8X&X3N#*#3", inline=True)
+	help_d.add_field(name = "credit [phone number]", value = "Ficha", inline=True)
 	help_d.add_field(name = "clear [Number]", value = f"Стирає повідомлення", inline=True)
 	help_d.add_field(name = "log", value = f"Показує інформацію", inline=True)
-	help_d.add_field(name = "minari", value = f"Sempai !!!", inline=True)
-	help_d.add_field(name = "???_secret", value = f"???????????", inline=True)
+	help_d.add_field(name = "minari", value = f"18+", inline=True)
 	help_d.set_footer(text="Corporation Privat Bank")
 	await ctx.send(embed=help_d)
 
