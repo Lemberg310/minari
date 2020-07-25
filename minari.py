@@ -31,7 +31,7 @@ async def on_command_error(ctx, error):
 @client.command(pass_context=True)
 async def minari(ctx):
 	sby = discord.Embed(title = "Служба Безпеки України")
-	sby.add_field(name = 'Стаття 254', value = 'Перегляд порнографічних материліалів, все було заснято , зуб даю !')
+	sby.add_field(name = 'Стаття 254', value = 'Перегляд порнографічних материліалів, все було заснято')
 	await ctx.send(embed = sby)
 
 @client.command(pass_context=True)
@@ -53,11 +53,11 @@ async def log(ctx):
 async def help(ctx):
 	help_d = discord.Embed(title="Command", color=0x00ff00)
 	help_d.add_field(name = "help", value = f"Показує це повідомлення", inline=True)
-	help_d.add_field(name = "ping", value = f"Показує ваш пінг (Бета)", inline=False)
+	help_d.add_field(name = "ping", value = f"Показує ваш пінг (Бета)", inline=True)
 	help_d.add_field(name = "credit [phone number]", value = "Ficha", inline=True)
-	help_d.add_field(name = "clear [Number]", value = f"Стирає повідомлення", inline=False)
+	help_d.add_field(name = "clear [Number]", value = f"Стирає повідомлення", inline=True)
 	help_d.add_field(name = "log", value = f"Показує інформацію", inline=True)
-	help_d.add_field(name = "minari", value = f"18+", inline=False)
+	help_d.add_field(name = "minari", value = f"18+", inline=True)
 	help_d.set_footer(text="Corporation Privat Bank")
 	await ctx.send(embed=help_d)
 
