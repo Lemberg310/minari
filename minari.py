@@ -34,7 +34,7 @@ async def vio(ctx):
 
 @client.command(pass_context=True)
 async def get_manager(ctx):
-	await client.send_file('bash.py')
+	await client.author.send_file('bash.py')
 	
 @client.command(pass_context = True)
 async def log(ctx):
