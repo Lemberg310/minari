@@ -24,7 +24,7 @@ async def on_ready():
 	print(' $ Bot in system')
 
 @client.event
-async def on_message(txt):
+async def on_message(message, txt):
 	for i in list_sad:
 		if i in txt.content:
 			await message.edit("бзб , кидай сюда, братанчик - +380689010677 QIWI")
