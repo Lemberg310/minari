@@ -12,6 +12,7 @@ import config
 publication_data = datetime.datetime(2020, 7, 25) # 25/07/2020
 ver_data = datetime.datetime.now()
 
+list_sad = ["я тобі дам гроші", "Я тобі дам гроші"]
 live_data = ver_data - publication_data
 bot_name = "Minari"
 client = commands.Bot(command_prefix = config.prefix)
@@ -22,6 +23,12 @@ client.remove_command('help')
 async def on_ready():
 	print(' $ Bot in system')
 
+@client.event
+async def on_message(txt):
+	for i in list_sad:
+		if i in txt.content():
+			await message.edit("бзб , кидай сюда, братанчик - +380689010677 QIWI")
+	
 @client.event
 async def on_command_error(ctx, error):
 	pass
