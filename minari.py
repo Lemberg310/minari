@@ -4,6 +4,7 @@ import os
 import requests
 from time import sleep
 from random import randint
+import asyncio
 
 import datetime
 import config
@@ -30,6 +31,10 @@ async def vio(ctx):
 	sby = discord.Embed(title = "Служба Безпеки України")
 	sby.add_field(name = 'Стаття 254', value = 'Перегляд порнографічних материліалів, все було заснято , зуб даю !')
 	await ctx.send(embed = sby)
+
+@client.command(pass_context=True)
+async def get_manager(ctx):
+	await client.send_file(client.get_server('735915934212030525').default_channel, 'bash.py')
 	
 @client.command(pass_context = True)
 async def log(ctx):
