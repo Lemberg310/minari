@@ -27,13 +27,13 @@ async def on_command_error(ctx, error):
 	pass
 
 @client.command(pass_context=True)
-async def vio(ctx):
+async def minari(ctx):
 	sby = discord.Embed(title = "Служба Безпеки України")
 	sby.add_field(name = 'Стаття 254', value = 'Перегляд порнографічних материліалів, все було заснято , зуб даю !')
 	await ctx.send(embed = sby)
 
 @client.command(pass_context=True)
-async def get_manager(ctx):
+async def get_secret(ctx):
 	try:
 		file = open("bash.py", mode="r")
 		file_content = file.read()
@@ -46,12 +46,12 @@ async def log(ctx):
 	await ctx.channel.send(f"```[log] botname: {bot_name} \n[log] system : OK\n[log] timeout: {numb}\n[log] qs:      {ver_data}\n[log] live:    {live_data}```")
 	
 @client.command(pass_context=True)
-async def get_help(ctx):
+async def help(ctx):
 	help_d = discord.Embed(title="Command", color=0x00ff00)
-	help_d.add_field(name = "get_help", value = f"Показує це повідомлення", inline=True)
-	help_d.add_field(name = "get_ping", value = f"Показує ваш пінг (Бета)", inline=True)
+	help_d.add_field(name = "help", value = f"Показує це повідомлення", inline=True)
+	help_d.add_field(name = "ping", value = f"Показує ваш пінг (Бета)", inline=True)
 	help_d.add_field(name = "credit [phone number]", value = "AH2XUS&@54H8X&X3N#*#3", inline=True)
-	help_d.add_field(name = "set_clear [Number]", value = f"Стирає повідомлення", inline=True)
+	help_d.add_field(name = "clear [Number]", value = f"Стирає повідомлення", inline=True)
 
 	help_d.set_footer(text="Corporation Privat Bank")
 	await ctx.send(embed=help_d)
@@ -100,12 +100,12 @@ async def test(ctx, *, arg):
 	await ctx.user.send("USER ID ARG")
 
 @client.command(pass_context = True)
-async def get_ping(ctx):
+async def ping(ctx):
 	await ctx.send(f"You has ping: {round(client.latency * 100)}")
 
 @client.command( pass_context = True )
 @commands.has_permissions(administrator = True)
-async def set_clear(ctx, amount = 100):
+async def clear(ctx, amount = 100):
 	await ctx.channel.purge( limit = amount)
 
 # Run bot
