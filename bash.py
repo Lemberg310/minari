@@ -1,3 +1,5 @@
+"""Please, when you don't know what it is, don't touch it"""
+
 import os
 
 tab = "------------------------------------------------"
