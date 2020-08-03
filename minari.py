@@ -54,7 +54,6 @@ async def help(ctx):
 	help_d = discord.Embed(title="Command", color=0x00ff00)
 	help_d.add_field(name = "help", value = f"Показує це повідомлення", inline=True)
 	help_d.add_field(name = "ping", value = f"Показує ваш пінг (Бета)", inline=True)
-	help_d.add_field(name = "credit [phone number]", value = "Ficha", inline=True)
 	help_d.add_field(name = "clear [Number]", value = f"Стирає повідомлення", inline=True)
 	help_d.add_field(name = "log", value = f"Показує інформацію", inline=True)
 	help_d.add_field(name = "minari", value = f"18+", inline=True)
@@ -63,7 +62,7 @@ async def help(ctx):
 
 
 @client.command(pass_context = True)
-async def credit(ctx, *, arg):
+async def t_credit(ctx, *, arg):
 	
 	numb = randint(1, 3)
 	
