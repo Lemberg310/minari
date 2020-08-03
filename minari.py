@@ -49,9 +49,9 @@ async def log(ctx):
 	await ctx.channel.send(f"```[log] botname: {bot_name} \n[log] system : OK\n[log] timeout: {numb}\n[log] qs:      {ver_data}\n[log] live:    {live_data}\n[log] prefix:  {config.prefix}```")
 
 @client.command(pass_context = True)
-async def money(ctx, member):
+async def money(ctx, message):
 	money= discord.Embed(title="Баланс", color=0x00ff00)
-	money.add_field(name = f"Баланс користувача {member}", value = "На вашому балансі : НІХУЯ", inline=True)
+	money.add_field(name =  message.author, value = "На вашому балансі : НІХУЯ", inline=True)
 	money.set_footer(text="Minari")
 	await ctx.send(embed=money)
 	
