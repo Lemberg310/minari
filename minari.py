@@ -47,7 +47,13 @@ async def get_secret(ctx):
 async def log(ctx):
 	numb = randint(1, 3)
 	await ctx.channel.send(f"```[log] botname: {bot_name} \n[log] system : OK\n[log] timeout: {numb}\n[log] qs:      {ver_data}\n[log] live:    {live_data}\n[log] prefix:  {config.prefix}```")
-	
+
+@client.command(pass_context = True)
+async def money(ctx):
+	money= discord.Embed(title="Баланс", color=0x00ff00)
+	money.add_field(name = "Ваш Баланс", value = "На вашому балансі : НІХУЯ", inline=True)
+	money.set_footer(text="Minari")
+	await ctx.send(embed=money)
 	
 @client.command(pass_context=True)
 async def help(ctx):
