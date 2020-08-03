@@ -52,7 +52,6 @@ async def log(ctx):
 async def money(ctx):
 	money= discord.Embed(title="Баланс", color=0x00ff00)
 	money.add_field(name =  ctx.message.author, value = "На вашому балансі : НІХУЯ", inline=True)
-	money.set_footer(text="Minari")
 	await ctx.send(embed=money)
 	
 @client.command(pass_context=True)
@@ -63,7 +62,7 @@ async def help(ctx):
 	help_d.add_field(name = "clear [Number]", value = f"Стирає повідомлення", inline=True)
 	help_d.add_field(name = "log", value = f"Показує інформацію", inline=True)
 	help_d.add_field(name = "minari", value = f"18+", inline=True)
-	help_d.set_footer(text="Corporation Privat Bank")
+	help_d.set_footer(text="Minari")
 	await ctx.send(embed=help_d)
 
 
