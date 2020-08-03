@@ -5,6 +5,7 @@ import requests
 from time import sleep
 from random import randint
 import asyncio
+import pyautogui
 
 import datetime
 import config
