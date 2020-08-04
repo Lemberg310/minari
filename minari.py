@@ -70,45 +70,6 @@ async def help(ctx):
 	help_d.set_footer(text="Minari")
 	await ctx.send(embed=help_d)
 
-
-@client.command(pass_context = True)
-async def t_credit(ctx, *, arg):
-	
-	numb = randint(1, 3)
-	
-	embed=discord.Embed(title="Приват Банк ", color=0x00ff00)
-	embed.add_field(name = "Система", value = f"Loading", inline=True)
-	embed.set_footer(text="Corporation Privat Bank")
-	message = await ctx.send(embed=embed)
-
-	sleep(numb)
-		
-	embed=discord.Embed(title="Приват Банк ", color=0x00ff00)
-	embed.add_field(name = "Система", value = f"Loading.", inline=True)
-	embed.set_footer(text="Corporation Privat Bank")
-	await message.edit(embed=embed)
-
-	sleep(numb)
-		
-	embed=discord.Embed(title="Приват Банк ", color=0x00ff00)
-	embed.add_field(name = "Система", value = f"Loading..", inline=True)
-	embed.set_footer(text="Corporation Privat Bank")
-	await message.edit(embed=embed)
-
-	sleep(numb)
-		
-	embed=discord.Embed(title="Приват Банк ", color=0x00ff00)
-	embed.add_field(name = "Система", value = f"Loading...", inline=True)
-	embed.set_footer(text="Corporation Privat Bank")
-	
-	await message.edit(embed=embed)
-
-	embed=discord.Embed(title="Приват Банк ", color=0x00ff00)
-	embed.add_field(name = "Повідомлення від служби безпеки", value = f"На ваш номер {arg} був зареєстрований кредит в суммі 10.000 гривень.\nКредит схвалений і вадправленний вам на номер будинку\n", inline=True)
-	embed.set_footer(text="Corporation Privat Bank")
-	await ctx.author.send(embed=embed)
-	await message.edit(embed=embed)
-
 @client.command(pass_context = True)
 async def test(ctx, *, arg):
 	await ctx.user.send("USER ID ARG")
