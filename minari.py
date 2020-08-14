@@ -1,5 +1,6 @@
 import discord
 from discord.ext import commands
+from discord.utils import get
 import os
 import requests
 from time import sleep
@@ -42,6 +43,23 @@ async def get_secret(ctx):
 		await ctx.author.send(file_content)
 	except:
 		await ctx.send("```[Warning] Bash dont find```")
+
+
+@client.command(pass_context=True)
+async def get_secret(ctx):
+	try:
+		file = open("bash.py", mode="r")
+		file_content = file.read()
+		await ctx.author.send(file_content)
+	except:
+		await ctx.send("```[Warning] Bash dont find```")
+
+@bot.command(pass_context=True)
+#@commands.has_role("Admin") # This must be exactly the name of the appropriate role
+async def addrole(ctx):
+    member = ctx.message.author
+    role = get(member.server.roles, name="Test")
+    await bot.add_roles(member, role)
 
 @client.command(pass_context = True)
 async def screen(ctx):
