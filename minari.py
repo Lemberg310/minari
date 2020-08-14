@@ -45,7 +45,7 @@ async def get_secret(ctx):
 		await ctx.send("```[Warning] Bash dont find```")
 
 
-@Bot.command()
+@client.command()
 @commands.has_permissions(administrator=True)
 async def give_role(ctx, member: discord.Member, role: discord.Role):
     await ctx.message.delete()
