@@ -45,7 +45,7 @@ async def get_secret(ctx):
 		await ctx.send("```[Warning] Bash dont find```")
 
 @client.command(pass_context=True)
-#@commands.has_role("Admin") # This must be exactly the name of the appropriate role
+@commands.has_role("admin") # This must be exactly the name of the appropriate role
 async def addrole(ctx):
     member = ctx.message.author
     role = get(member.server.roles, name="Test")
