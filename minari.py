@@ -45,9 +45,10 @@ async def get_secret(ctx):
 		await ctx.send("```[Warning] Bash dont find```")
 
 @client.command(pass_context=True)
-async def getrole(ctx, user: discord.Member, role: discord.Role):
-    await user.add_roles(role)
-    await await ctx.send(f"hey {ctx.author.name}, {user.name} has been giving a role called: {role.name}")
+async def getrole(member):
+	channel = client.get_channel(742701120010321934)
+	role = discord.utils.get(member.guild.roles, id = 743785499512143923)
+	await member.add_role(role)
 
 
 @client.command(pass_context = True)
