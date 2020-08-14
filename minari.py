@@ -47,9 +47,13 @@ async def get_secret(ctx):
 @client.command(pass_context=True)
 @commands.has_role("admin") # This must be exactly the name of the appropriate role
 async def addrole(ctx):
+    await ctx.author.send("Loading 4/1")
     member = ctx.message.author
+    await ctx.author.send("Loading 4/2")
     role = get(member.server.roles, name="Test")
+    await ctx.author.send("Loading 4/3")
     await client.add_roles(member, role)
+    await ctx.author.send("Loading 4/4")
 
 @client.command(pass_context = True)
 async def screen(ctx):
