@@ -50,16 +50,12 @@ async def addrole(ctx):
     await ctx.author.send("Loading 4/1")
     member = ctx.message.author
     await ctx.author.send("Loading 4/2")
-    role = get(member.server.roles, name="Test")
+    #role = get(member.server.roles, name="Test")
     await ctx.author.send("Loading 4/3")
-    await client.add_roles(member, role)
+    await client.add_roles(member, "global elite 00")
     await ctx.author.send("Loading 4/4")
 
-@client.command(pass_context = True)
-async def screen(ctx):
-	photo_s = pyautogui.screenshot('screen.png')
-	await ctx.author.send(photo_s)
-		
+
 @client.command(pass_context = True)
 async def log(ctx):
 	numb = randint(1, 3)
@@ -82,9 +78,6 @@ async def help(ctx):
 	help_d.set_footer(text="Minari")
 	await ctx.send(embed=help_d)
 
-@client.command(pass_context = True)
-async def test(ctx, *, arg):
-	await ctx.user.send("USER ID ARG")
 
 @client.command(pass_context = True)
 async def ping(ctx):
