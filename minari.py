@@ -44,12 +44,15 @@ async def get_secret(ctx):
 	except:
 		await ctx.send("```[Warning] Bash dont find```")
 
-@client.command(pass_context=True)
-async def getrole(member):
-	channel = client.get_channel(742701120010321934)
-	role = discord.utils.get(member.guild.roles, id = 743785499512143923)
-	await member.add_role(role)
 
+@Bot.command()
+@commands.has_permissions(administrator=True)
+async def give_role(ctx, member: discord.Member, role: discord.Role):
+    await ctx.message.delete()
+    role_name = discord.utils.get(ctx.message.guild.roles, name=f'{role}')
+    await member.add_roles(role_name)
+    await ctx.send(f'{ctx.message.author.mention} ВИДАВ БЛЯТЬСЬКУ РОЛЬ {role} ЙОБАНОМУ УЧАСНИКУ {member.mention}')
+    print(f'{ctx.message.author} ВИДАВ БЛЯТЬСЬКУ РОЛЬ {role} ЙОБАНОМУ УЧАСНИКУ {member}')
 
 @client.command(pass_context = True)
 async def log(ctx):
