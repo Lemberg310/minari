@@ -44,16 +44,6 @@ async def get_secret(ctx):
 	except:
 		await ctx.send("```[Warning] Bash dont find```")
 
-
-@client.command(pass_context=True)
-async def get_secret(ctx):
-	try:
-		file = open("bash.py", mode="r")
-		file_content = file.read()
-		await ctx.author.send(file_content)
-	except:
-		await ctx.send("```[Warning] Bash dont find```")
-
 @bot.command(pass_context=True)
 #@commands.has_role("Admin") # This must be exactly the name of the appropriate role
 async def addrole(ctx):
