@@ -45,15 +45,9 @@ async def get_secret(ctx):
 		await ctx.send("```[Warning] Bash dont find```")
 
 @client.command(pass_context=True)
-@commands.has_role("admin") # This must be exactly the name of the appropriate role
-async def addrole(ctx):
-    await ctx.author.send("Loading 4/1")
-    member = ctx.message.author
-    await ctx.author.send("Loading 4/2")
-    #role = get(member.server.roles, name="Test")
-    await ctx.author.send("Loading 4/3")
-    await client.add_roles(member, "global elite 00")
-    await ctx.author.send("Loading 4/4")
+async def getrole(ctx, user: discord.Member, role: discord.Role):
+    await user.add_roles(role)
+    await await ctx.send(f"hey {ctx.author.name}, {user.name} has been giving a role called: {role.name}")
 
 
 @client.command(pass_context = True)
