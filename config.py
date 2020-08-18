@@ -1,1 +1,1 @@
-prefix = "mina"
+prefix = "$"
